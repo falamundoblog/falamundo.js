@@ -1,6 +1,1 @@
-*.class
-
-# Package Files #
-*.jar
-*.war
-*.ear
+(function(e,t,n){var r=n.documentElement;while(r.childNodes.length&&r.lastChild.nodeType==1){r=r.lastChild}var i=130,s=e(r).attr("data-colunas")||2,o=e(r).attr("data-linhas")||10,u=s*o,a="fmcbk"+parseInt((new Date).getTime()*Math.random()),f=t.location.protocol+"//www.falamundo.com/feeds/posts/summary?max-results="+u+"&orderby=published&alt=json-in-script&callback="+a,l=function(t){if(t.feed.entry){var n;e.each(t.feed.entry,function(t,o){if(t%s==0){n=e('<div class="flsmry"></div>').appendTo(e(r).parent())}var u=o.title.$t.slice(0,40),a=o.media$thumbnail.url.replace("s72-c","s130-c"),f=o.link[2].href,o=e("<a class='flsmryit' href='"+f+"''></a>").append("<img src='"+a+"' width='"+i+"'/>").append("<span>"+u+(u!=o.title.$t?"...":"")+"</span>").appendTo(n)})}};e.ajax({type:"GET",url:f,async:false,jsonpCallback:a,contentType:"application/json",dataType:"jsonp",success:l})})(jQuery,window,document)
